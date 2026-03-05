@@ -29,12 +29,12 @@ app.use(cors(corsOptions));
 connectDatabase();
 
 const authLimiter = rateLimit({
-  windowMs: 1000 * 60 * 30,
+  windowMs: 1000 * 60 * 60,
   max: 10,
   message: "too many request from this IP , please try again later",
 });
 
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", authLimiter, authRoutes);
 app.use("/api/projects", projectRoutes);
 app.use("/api/tasks", taskRoutes);
 app.use("/api/admin", adminRoutes);
