@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-main);
+
+  color: #213547;
+}
+
+:root.dark {
+  --bg-main: #1a1836; /* slightly softer than before */
+  --bg-secondary: #24214f;
+  --card-bg: #2c2961;
+  --card-elevated: #35317a;
+
+  /* Primary now bright enough to see */
+  --primary: #8b7bff; /* readable purple */
+  --primary-hover: #a79bff;
+  --primary-active: #6f5cff;
+
+  /* Text contrast improved */
+  --text-primary: #f1f5ff; /* softer white */
+  --text-secondary: #c7c9f4;
+  --text-muted: #9ea3d9;
+
+  --border: #4c46a3;
+}
+:root.light {
+  --bg-main: #f5f3ff;
+  --bg-secondary: #ede9fe; /* soft purple tint */
+  --card-bg: #ffffff;
+  --card-elevated: #f3f0ff;
+
+  --primary: #5a3dcd;
+  --primary-hover: #3f2a99;
+
+  --text-primary: #1e1b4b;
+  --text-secondary: #4c4c6d;
+  --text-muted: #6b6b8f;
+
+  --border: #ddd6fe;
+}
+/* NAV */
+nav {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* BODY */
+body {
+  font-family: "Fira Sans", sans-serif, Arial;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* LINKS */
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  /* transition: color 0.2s ease; */
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* BUTTONS */
+button {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--card-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  /* transition: all 0.2s ease; */
+}
+
+button:hover {
+  background-color: var(--card-elevated);
+  border-color: var(--primary);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+}
