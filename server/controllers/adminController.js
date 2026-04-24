@@ -125,7 +125,7 @@ async function deleteUser(req, res) {
     await User.findByIdAndDelete(userId);
 
     res.json({
-      message: "User, and any Projects and related tasks deleted successfully",
+      message: "User, and any Projects and related tasks deleted successfully.",
     });
   } catch (error) {
     return res.status(500).json({
